@@ -17,22 +17,11 @@ function isValidDate(year, month, day) {
 }
 
 function calcNumber(anoInicio, mesInicio, diaInicio, anoFim, mesFim, diaFim) {
-    // Cria as datas usando os objetos Date
-    const dataInicio = new Date(anoInicio, mesInicio - 1, diaInicio); // O mês começa do zero (janeiro = 0)
-    const dataFim = new Date(anoFim, mesFim - 1, diaFim); // O mês começa do zero (janeiro = 0)
+        numberYears = anoFim - anoInicio;
+        numberMonths = (mesFim - mesInicio);
+        numberDays = Math.abs(diaFim-diaInicio);
 
-    // Calcula a diferença em milissegundos entre as datas
-    const diferencaMs = dataFim - dataInicio;
 
-    // Converte a diferença de milissegundos para dias
-    const diferencaDias = diferencaMs / (1000 * 60 * 60 * 24);
-
-    // Arredonda para baixo para garantir um resultado inteiro
-    numberDays = Math.floor(diferencaDias);
-
-    numberMonths = Math.floor((anoFim - anoInicio) * 12 + (mesFim - mesInicio));
-
-    numberYears = anoFim - anoInicio;
 }
 
 function mostraValores(){
