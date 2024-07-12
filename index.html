@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 9px; text-align: center; margin-top: 3rem; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main class="content-main">
+
+    <!-- PARTE DE COLOCAR OS INPUTS DE DATA DE NASCIMENTO -->
+    <section class="content-main__form">
+      <div class="form__day input-container">
+        <label for="day__input" class="day__title">Day</label>
+        <input type="number" id="day__input" maxlength="2" placeholder="DD">
+        <span class="error day__error">Must be a valid day</span>
+      </div>
+
+      <div class="form__month input-container">
+        <label for="month__input" class="month__title">Month</label>
+        <input type="number" id="month__input" maxlength="2" placeholder="MM">
+        <span class="error month__error">Must be a valid month</span>
+
+      </div>
+
+      <div class="form__year input-container">
+        <label for="year__input" class="year__title">Year</label>
+        <input type="number" id="year__input" maxlength="4" placeholder="YYYY">
+        <span class="error year__error">Must be a valid year</span>
+      </div>
+
+    </section>
+
+    <!-- PARTE ONDE TERA O BOTAO QUE ACIONARA A AÇÃO DE CALCULO -->
+    <section class="content-main__calculator">
+      <div class="calculator__bar"></div>
+      <button class="calculator__button"><img src="assets/images/icon-arrow.svg" alt="Press to calculate"></button>
+    </section>
+
+    <!-- BANNER ONDE SERA EXIBIDO O RESULTADO -->
+
+    <section class="content-main__result">
+      <h1 class="result__years"><strong class="y-numb">--</strong> years</h1>
+      <h1 class="result__months"><strong class="m-numb">--</strong> months</h1>
+      <h1 class="result__days"><strong class="d-numb">--</strong> days</h1>
+    </section>
+  </main>
+
+ 
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/SCORPIONdm" target="_blank">Diego Mendes</a>.
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

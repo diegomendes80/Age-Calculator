@@ -1,0 +1,220 @@
+@use 'abstract/mixins';
+@use 'abstract/root';
+@use 'abstract/var';
+
+body{
+    font-family: var.$fonte;
+    background-color: var.$off-white;
+    height: 100vh;
+    // background-color: aqua;
+}
+
+
+.content-main{
+    @include mixins.margem-central(90%);
+    background-color: var.$white;
+    border-radius: 1rem 1rem 5rem 1rem;
+    margin-top: 3rem;
+    padding: 2.5rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // row-gap: 2rem;
+    
+
+    // PARTE DE FORMULARIO -----------------------------------------------------------------------
+    .content-main__form{
+        @include mixins.margem-central(80%);
+        // height: 10rem;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        column-gap: 1rem;
+
+        // margin-bottom: 1.5rem;
+
+        
+        .input-container{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            row-gap: .3rem;
+            justify-content: center;
+            margin: 0;
+
+            
+            label{
+                align-self: start;
+                width: 50%;
+                margin: 0;
+
+                font-size: 14px;
+                font-weight: 600;
+                color: var.$smokey-grey;
+                text-transform: uppercase;
+            }
+
+
+            input::placeholder{
+                font-weight: 900;
+                color: var.$smokey-grey;
+                // padding-left: 8px;
+            }
+
+            input{
+                width: 80%;
+                // height: 2rem;
+                border-radius: 5px;
+                border: 1.5px solid var.$light-grey;
+                margin: 0;
+                color: var.$off-black;
+                font-weight: 900;
+                font-size: 16px;
+                padding: 10px 9px;
+
+
+            }
+
+            input:hover{
+                cursor: pointer;
+                border-color: var.$purple;
+            }
+
+            .error{
+                margin: 0;
+                display: none;
+                font-size: 10px;
+                color: var.$light-red;
+            }
+        }
+    }
+
+    // PARTE DE BOTAO -----------------------------------------------------------------------
+
+
+    .content-main__calculator{
+        @include mixins.margem-central(88%);
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        position: relative;
+
+        margin: 3.5rem 0;
+
+        .calculator__bar{
+           
+            height: 1.5px;
+            width: 100%;
+            background-color: var.$light-grey;
+        }
+
+        .calculator__button{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4rem;
+            height: 4rem;
+
+            border-radius: 50%;
+            border: none;
+            background-color: var.$purple;
+            
+            img{
+                
+                width: 60%;
+            }
+
+            
+        }
+
+        .calculator__button:hover{
+            cursor: pointer;
+            transition: .3s;
+            background-color: var.$off-black;
+        }
+
+    }
+
+    // PARTE DO BANNER DE EXIBIÇÃO -----------------------------------------------------------------------
+
+    .content-main__result{
+        @include mixins.margem-central(80%);
+       
+       
+        h1{
+            font-size: 45px;
+            font-style: italic;
+            margin: 0;
+            
+            color: var.$off-black;
+            line-height: 4.5rem;
+
+            strong{
+                color: var.$purple;
+            }
+        }
+    }
+}
+
+
+@media(min-width:1400px){
+
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .content-main{
+        @include mixins.margem-central(42%);
+        border-radius: 1rem 1rem 10rem 1rem;
+        
+
+        align-items: flex-start;
+       
+        row-gap: 2rem;
+        
+
+        .content-main__form{
+            
+            
+            @include mixins.margem-central(60%);
+            
+            // column-gap: 0;
+            margin: 0;
+            margin-left: 3.9rem;
+            column-gap: 2.5rem;  
+
+            .input-container{
+                width: 100%;
+                input{
+                    width: 100%;
+                    padding-left: 15px;
+                    font-size: 18px
+                }
+            }
+           
+        }
+
+        .content-main__calculator{
+            @include mixins.margem-central(80%);
+
+            .calculator__button{
+                position: absolute;
+                top: 50%;
+                left: 88%;
+                transform: translateY(-50%);
+               
+            }
+            
+        }
+
+        .content-main__result{
+            h1{
+                font-size: 65px;
+            }
+        }
+    }
+}
